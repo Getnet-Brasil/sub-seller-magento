@@ -237,7 +237,7 @@ class SubSellerRepository implements SubSellerRepositoryInterface
     private function validate($subSeller)
     {
         $exception = new InputException();
-        
+
         if ($subSeller->getId() === 0) {
             $subSeller->setId(null);
         }

@@ -11,7 +11,7 @@ Com os Pagamentos Digitais Getnet, você tem acesso a soluções completas para 
 Status Atual
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/getnet-adquirencia/sub-seller-magento/badges/quality-score.png?b=Magento%402.4&s=c9c4d8417a960a4cb2de61217f3e8c6948f74036)](https://scrutinizer-ci.com/g/getnet-adquirencia/sub-seller-magento/)
-[![StyleCI](https://github.styleci.io/repos/457461565/shield?branch=Magento@2.4)](https://github.styleci.io/repos/457461565?branch=Magento@2.4)
+[![StyleCI](https://github.styleci.io/repos/513163373/shield?branch=Magento@2.4)](https://github.styleci.io/repos/513163373?branch=Magento@2.4)
 [![Magento Coding Quality](https://github.com/getnet-adquirencia/sub-seller-magento/actions/workflows/magento-coding-quality.yml/badge.svg)](https://github.com/getnet-adquirencia/sub-seller-magento/actions/workflows/magento-coding-quality.yml)
 [![Magento Mess Detector](https://github.com/getnet-adquirencia/sub-seller-magento/actions/workflows/mess-detector.yml/badge.svg)](https://github.com/getnet-adquirencia/sub-seller-magento/actions/workflows/mess-detector.yml)
 
@@ -29,6 +29,7 @@ Permite ao administrador da loja cadastrar novos Sub Sellers associados a sua co
 Permite criação e gerenciamento de contas na Getnet.
 
 Documentação disponível no Postman S2!
+
 [![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)](https://documenter.getpostman.com/view/3103718/UzBsGPp1)
 
 ## Instalação e Configuração e Dúvidas Comuns

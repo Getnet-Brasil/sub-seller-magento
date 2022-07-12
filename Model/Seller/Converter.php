@@ -19,6 +19,7 @@ use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
  * Sub Seller Model converter.
  *
  * Converts a Sub Seller Model to a Data Object or vice versa.
+ *
  * @SuppressWarnings(PHPMD)
  */
 class Converter
