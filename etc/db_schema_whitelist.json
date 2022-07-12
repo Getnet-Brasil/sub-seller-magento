@@ -1,0 +1,45 @@
+{
+    "getnet_sub_seller": {
+        "column": {
+            "getnet_sub_seller_id": true,
+            "merchant_id": true,
+            "code": true,
+            "id_ext": true,
+            "email": true,
+            "legal_document_number": true,
+            "type": true,
+            "legal_name": true,
+            "birth_date": true,
+            "addresses": true,
+            "telephone": true,
+            "fax": true,
+            "bank_accounts": true,
+            "payment_plan": true,
+            "accepted_contract": true,
+            "liability_chargeback": true,
+            "marketplace_store": true,
+            "automatic_anticipation": true,
+            "occupation": true,
+            "gender": true,
+            "mothers_name": true,
+            "fathers_name": true,
+            "nationality": true,
+            "birth_city": true,
+            "birth_state": true,
+            "birth_state_id": true,
+            "identification_document": true,
+            "monthly_gross_income": true,
+            "gross_equity": true,
+            "trade": true,
+            "representative_name": true,
+            "representative_legal_document": true,
+            "status": true,
+            "status_comment": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

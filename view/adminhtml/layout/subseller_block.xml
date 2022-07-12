@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Getnet. All rights reserved.
+ *
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="adminhtml.subseller.container">
+            <block class="Magento\Backend\Block\Widget\Grid" name="adminhtml.subseller.grid" as="grid">
+                <arguments>
+                    <argument name="id" xsi:type="string">sub_seller_grid</argument>
+                    <argument name="dataSource" xsi:type="object" shared="false">Getnet\SubSellerMagento\Model\SubSellerCollection</argument>
+                    <argument name="default_sort" xsi:type="string">getnet_sub_seller_id</argument>
+                    <argument name="default_dir" xsi:type="string">ASC</argument>
+                    <argument name="save_parameters_in_session" xsi:type="string">1</argument>
+                </arguments>
+                <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" name="adminhtml.catalog.product.set.grid.columnSet" as="grid.columnSet">
+                    <arguments>
+                        <argument name="id" xsi:type="string">getnet_sub_seller_id</argument>
+                        <argument name="rowUrl" xsi:type="array">
+                            <item name="path" xsi:type="string">subseller/*/edit</item>
+                            <item name="extraParamsTemplate" xsi:type="array">
+                                <item name="subseller" xsi:type="string">getSubSellerId</item>
+                            </item>
+                        </argument>
+                    </arguments>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.catalog.product.set.grid.column.id" as="id">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Id</argument>
+                            <argument name="filter_index" xsi:type="string">getnet_sub_seller_id</argument>
+                            <argument name="index" xsi:type="string">sub_seller_id</argument>
+                            <argument name="column_css_class" xsi:type="string">col-id</argument>
+                            <argument name="header_css_class" xsi:type="string">col-id</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.catalog.product.set.grid.column.code" as="code">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Code</argument>
+                            <argument name="filter_index" xsi:type="string">code</argument>
+                            <argument name="index" xsi:type="string">code</argument>
+                            <argument name="column_css_class" xsi:type="string">col-code</argument>
+                            <argument name="header_css_class" xsi:type="string">col-code</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.catalog.product.set.grid.column.legal_document_number" as="legal_document_number">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Legal Document Number</argument>
+                            <argument name="filter_index" xsi:type="string">legal_document_number</argument>
+                            <argument name="index" xsi:type="string">legal_document_number</argument>
+                            <argument name="column_css_class" xsi:type="string">col-legal_document_number</argument>
+                            <argument name="header_css_class" xsi:type="string">col-legal_document_number</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.catalog.product.set.grid.column.email" as="email">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Email</argument>
+                            <argument name="filter_index" xsi:type="string">email</argument>
+                            <argument name="index" xsi:type="string">email</argument>
+                            <argument name="column_css_class" xsi:type="string">col-email</argument>
+                            <argument name="header_css_class" xsi:type="string">col-email</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.catalog.product.set.grid.column.legal_name" as="legal_name">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Legal Name</argument>
+                            <argument name="filter_index" xsi:type="string">legal_name</argument>
+                            <argument name="index" xsi:type="string">legal_name</argument>
+                            <argument name="column_css_class" xsi:type="string">col-name</argument>
+                            <argument name="header_css_class" xsi:type="string">col-name</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.catalog.product.set.grid.column.status" as="status">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Status</argument>
+                            <argument name="filter_index" xsi:type="string">status</argument>
+                            <argument name="index" xsi:type="string">status</argument>
+                            <argument name="type" xsi:type="string">options</argument>
+                            <argument name="options" xsi:type="options" model="Getnet\SubSellerMagento\Model\Config\Source\Status"/>
+                            <argument name="column_css_class" xsi:type="string">col-status</argument>
+                            <argument name="header_css_class" xsi:type="string">col-status</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.catalog.product.set.grid.column.id_ext" as="id_ext">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Id Seller on Getnet</argument>
+                            <argument name="filter_index" xsi:type="string">id_ext</argument>
+                            <argument name="index" xsi:type="string">id_ext</argument>
+                            <argument name="column_css_class" xsi:type="string">col-id_ext</argument>
+                            <argument name="header_css_class" xsi:type="string">col-id_ext</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

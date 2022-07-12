@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Getnet. All rights reserved.
+ *
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Getnet_SubSellerMagento::subseller" title="Getnet" translate="title" module="Getnet_SubSellerMagento" sortOrder="20" parent="Magento_Backend::stores" resource="Getnet_SubSellerMagento::manage_subseller"/>
+        <add id="Getnet_SubSellerMagento::subseller_manager" title="Sub Sellers" translate="title" module="Getnet_SubSellerMagento" sortOrder="10" parent="Getnet_SubSellerMagento::subseller" action="subseller/subseller" resource="Getnet_SubSellerMagento::manage_subseller"/>
+        <add id="Getnet_SubSellerMagento::config_subseller" title="Settings" translate="title" module="Getnet_SubSellerMagento" sortOrder="20" parent="Getnet_SubSellerMagento::subseller" action="adminhtml/system_config/edit/section/getnet_sub_seller/" resource="Getnet_SubSellerMagento::manage_subseller"/>
+    </menu>
+</config>

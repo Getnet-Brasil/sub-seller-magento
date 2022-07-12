@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Getnet. All rights reserved.
+ *
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="getnet" sortOrder="110">
+            <label>Getnet</label>
+        </tab>
+        <section id="getnet_sub_seller" translate="label" sortOrder="1600" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Sub Seller</label>
+            <tab>getnet</tab>
+            <resource>Getnet_SubSellerMagento::config_subseller</resource>
+            <group id="general" translate="label comment" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label><![CDATA[<div class='getnet-payment-logo'></div><div class='getnet-payment-byline'><p><b>Pagamentos Digitais Getnet</b> - Sub Seller</p><p>Com os Pagamentos Digitais Getnet, você tem acesso a soluções completas para oferecer a melhor experiência de pagamento online. Além disso, você pode contar com uma tecnologia de ponta e segurança em todas as transações.</p></div>]]></label>
+                <fieldset_css>complex getnet-payment-section</fieldset_css>
+                <frontend_model>Getnet\PaymentMagento\Model\Adminhtml\Source\PaymentGroup</frontend_model>
+                <comment><![CDATA[Technical support available <a href="https://github.com/getnet-adquirencia/payment-magento/issues/new/choose">here</a>.]]></comment>
+                <group id="credentials" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Credentials</label>
+                    <comment><![CDATA[<h4>Attention, The requested data is exclusive to the Administration API.</h4><p>Consult your sales representative to obtain.</p>]]></comment>
+                    <field id="environment" translate="label select comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                        <label>Environment</label>
+                        <source_model>Getnet\SubSellerMagento\Model\Config\Source\Environment</source_model>
+                        <validate>required-entry validate-select</validate>
+                    </field>
+                    <field id="merchant_id_production" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                        <label>Merchant Id - production</label>
+                        <validate>required-entry</validate>
+                        <depends>
+                            <field id="*/*/*/environment">production</field>
+                        </depends>
+                    </field>
+                    <field id="client_id_production" translate="label" type="obscure" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                        <label>Client Id - production</label>
+                        <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                        <validate>required-entry</validate>
+                        <depends>
+                            <field id="*/*/*/environment">production</field>
+                        </depends>
+                    </field>
+                    <field id="client_secret_production" translate="label" type="obscure" sortOrder="23" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                        <label>Client Secret - production</label>
+                        <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                        <validate>required-entry</validate>
+                        <depends>
+                            <field id="*/*/*/environment">production</field>
+                        </depends>
+                    </field>
+                    <field id="merchant_id_homolog" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                        <label>Merchant Id - homolog</label>
+                        <validate>required-entry</validate>
+                        <depends>
+                            <field id="*/*/*/environment">homolog</field>
+                        </depends>
+                    </field>
+                    <field id="client_id_homolog" translate="label" type="obscure" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                        <label>Client Id - homolog</label>
+                        <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                        <validate>required-entry</validate>
+                        <depends>
+                            <field id="*/*/*/environment">homolog</field>
+                        </depends>
+                    </field>
+                    <field id="client_secret_homolog" translate="label" type="obscure" sortOrder="23" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                        <label>Client Secret - homolog</label>
+                        <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                        <validate>required-entry</validate>
+                        <depends>
+                            <field id="*/*/*/environment">homolog</field>
+                        </depends>
+                    </field>
+                    <field id="merchant_id_sandbox" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                        <label>Merchant Id - Sandbox</label>
+                        <validate>required-entry</validate>
+                        <depends>
+                            <field id="*/*/*/environment">sandbox</field>
+                        </depends>
+                    </field>
+                    <field id="client_id_sandbox" translate="label" type="obscure" sortOrder="32" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                        <label>Client Id - Sandbox</label>
+                        <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                        <validate>required-entry</validate>
+                        <depends>
+                            <field id="*/*/*/environment">sandbox</field>
+                        </depends>
+                    </field>
+                    <field id="client_secret_sandbox" translate="label" type="obscure" sortOrder="33" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                        <label>Client Secret - Sandbox</label>
+                        <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                        <validate>required-entry</validate>
+                        <depends>
+                            <field id="*/*/*/environment">sandbox</field>
+                        </depends>
+                    </field>
+                </group>
+                <group id="list_commisions" translate="label comment" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sets the list commissions</label>
+                    <field id="commisions" translate="label comment" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Commisions</label>
+                        <frontend_model>Getnet\SubSellerMagento\Block\Adminhtml\System\Form\Field\ListCommision</frontend_model>
+                        <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

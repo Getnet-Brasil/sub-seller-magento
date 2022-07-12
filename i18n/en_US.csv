@@ -1,0 +1,119 @@
+"Sub Seller","Sub Seller"
+Status,Status
+"Status Comment","Status Comment"
+"Created At","Created At"
+"Updated At","Updated At"
+"Sub Seller Id on Getnet","Sub Seller Id on Getnet"
+Code,Code
+"Type Persona","Type Persona"
+Email,Email
+"Legal Document Number","Legal Document Number"
+"Legal Name","Legal Name"
+"Trade Legal Name","Trade Legal Name"
+"Founding Date","Founding Date"
+"Birth Date","Birth Date"
+Street,Street
+"Street Number","Street Number"
+District,District
+Complement,Complement
+City,City
+State,State
+Country,Country
+Postcode,Postcode
+Telephone,Telephone
+"Bank Account","Bank Account"
+"Account Type","Account Type"
+Bank,Bank
+Agency,Agency
+"Agency Digit","Agency Digit"
+Account,Account
+"Account Digit","Account Digit"
+"Marketplace Settings","Marketplace Settings"
+"Payment Plan","Payment Plan"
+"Accepted Contract","Accepted Contract"
+"Marketplace Store","Marketplace Store"
+Occupation,Occupation
+"Monthly Gross Income","Monthly Gross Income"
+"Gross Equity","Gross Equity"
+Addresses,Addresses
+"Additional data","Additional data"
+"Identification Document","Identification Document"
+Gross,Gross
+"Company Addresses","Company Addresses"
+"Legal Data Representative","Legal Data Representative"
+"Legal Representative Document's","Legal Representative Document's"
+"Add New Sub Seller","Add New Sub Seller"
+"Pessoa Física","Pessoa Física"
+"Pessoa Jurídica","Pessoa Jurídica"
+Back,Back
+Reset,Reset
+"Delete Sub Seller","Delete Sub Seller"
+"Are you sure you want to do this?","Are you sure you want to do this?"
+"Save Sub Seller","Save Sub Seller"
+Brand,Brand
+Product,Product
+"Commission Percentage","Commission Percentage"
+Add,Add
+Getnet,Getnet
+SubSeller,SubSeller
+"Manage Sub Seller","Manage Sub Seller"
+"New Sub Seller","New Sub Seller"
+"You deleted the sub seller.","You deleted the sub seller."
+"We can't delete this  sub seller because of an incorrect sub seller ID.","We can't delete this  sub seller because of an incorrect sub seller ID."
+"Something went wrong deleting this  sub seller.","Something went wrong deleting this  sub seller."
+"Edit Sub Seller","Edit Sub Seller"
+"Manage Sub Sellers","Manage Sub Sellers"
+"Getnet Sub Sellers","Getnet Sub Sellers"
+"Sub Seller Code: %1","Sub Seller Code: %1"
+"Sub Sellers","Sub Sellers"
+"You saved the sub seller.","You saved the sub seller."
+Checking,Checking
+Saving,Saving
+Unique,Unique
+Production,Production
+Homolog,Homolog
+"Sandbox - Environment for tests","Sandbox - Environment for tests"
+Pending,Pending
+"Registered, Pending Authorization","Registered, Pending Authorization"
+"Authorized Sub Seller","Authorized Sub Seller"
+"Not Authorized","Not Authorized"
+"Requires Registration Update","Requires Registration Update"
+Finished,Finished
+"Token Refresh Successfully.","Token Refresh Successfully."
+"Error saving information in database: %1","Error saving information in database: %1"
+"Refresh Token Error: %1","Refresh Token Error: %1"
+"Token update request error: %1","Token update request error: %1"
+"O Sub Seller já possuí id de relacionamento na Getnet","O Sub Seller já possuí id de relacionamento na Getnet"
+"Send Sub Seller internal code: %1","Send Sub Seller internal code: %1"
+"Unable to register, errors found: %1","Unable to register, errors found: %1"
+"Success, the sub seller id: %1, enable to sales: %2, id getnet: %3","Success, the sub seller id: %1, enable to sales: %2, id getnet: %3"
+"Connection Error: %1","Connection Error: %1"
+"The Sub Seller does not have a relationship id on Getnet.","The Sub Seller does not have a relationship id on Getnet."
+"Get Data to Sub Seller internal code: %1","Get Data to Sub Seller internal code: %1"
+"Success, sub seller id: %1, enable to sale: %2","Success, sub seller id: %1, enable to sale: %2"
+"Error: %1","Error: %1"
+Error,Error
+"The Sub Seller does not have a relationship id on Getnet","The Sub Seller does not have a relationship id on Getnet"
+"Could not update registration, errors found: %1","Could not update registration, errors found: %1"
+"""%fieldName"" is required. Enter and try again.","""%fieldName"" is required. Enter and try again."
+"Getnet Sub Seller","Getnet Sub Seller"
+"Sub Seller Section","Sub Seller Section"
+Settings,Settings
+"<div class='getnet-payment-logo'></div><div class='getnet-payment-byline'><p><b>Pagamentos Digitais Getnet</b> - Sub Seller</p><p>Com os Pagamentos Digitais Getnet, você tem acesso a soluções completas para oferecer a melhor experiência de pagamento online. Além disso, você pode contar com uma tecnologia de ponta e segurança em todas as transações.</p></div>","<div class='getnet-payment-logo'></div><div class='getnet-payment-byline'><p><b>Pagamentos Digitais Getnet</b> - Sub Seller</p><p>Com os Pagamentos Digitais Getnet, você tem acesso a soluções completas para oferecer a melhor experiência de pagamento online. Além disso, você pode contar com uma tecnologia de ponta e segurança em todas as transações.</p></div>"
+"Technical support available <a href=""https://github.com/getnet-adquirencia/payment-magento/issues/new/choose"">here</a>.","Technical support available <a href=""https://github.com/getnet-adquirencia/payment-magento/issues/new/choose"">here</a>."
+Credentials,Credentials
+"<h4>Attention, The requested data is exclusive to the Administration API.</h4><p>Consult your sales representative to obtain.</p>","<h4>Attention, The requested data is exclusive to the Administration API.</h4><p>Consult your sales representative to obtain.</p>"
+Environment,Environment
+"Merchant Id - production","Merchant Id - production"
+"Client Id - production","Client Id - production"
+"Client Secret - production","Client Secret - production"
+"Merchant Id - homolog","Merchant Id - homolog"
+"Client Id - homolog","Client Id - homolog"
+"Client Secret - homolog","Client Secret - homolog"
+"Merchant Id - Sandbox","Merchant Id - Sandbox"
+"Client Id - Sandbox","Client Id - Sandbox"
+"Client Secret - Sandbox","Client Secret - Sandbox"
+"Sets the list commissions","Sets the list commissions"
+Commisions,Commisions
+Id,Id
+"Id Seller on Getnet","Id Seller on Getnet"
