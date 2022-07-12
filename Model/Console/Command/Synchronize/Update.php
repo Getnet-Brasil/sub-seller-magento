@@ -165,6 +165,7 @@ class Update extends AbstractModel
 
             if ($response->getSuccess()) {
                 $this->writeln('<info>Done!</info>');
+
                 return;
             }
 
@@ -251,6 +252,7 @@ class Update extends AbstractModel
 
             if (isset($response['success'])) {
                 $getnetData->setSuccess(true);
+
                 return $getnetData;
             }
 

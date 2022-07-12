@@ -10,7 +10,6 @@ namespace Getnet\SubSellerMagento\Helper;
 
 use Getnet\SubSellerMagento\Api\Data\SubSellerInterface;
 use Getnet\SubSellerMagento\Model\Config;
-use Getnet\SubSellerMagento\Model\Config\Source;
 use Magento\Directory\Model\Region;
 use Magento\Directory\Model\RegionFactory;
 use Magento\Store\Model\Store;
@@ -148,7 +147,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $businessAddress = $addresses['addresses']['business_address'];
         $bankAccounts = $subSeller->getBankAccounts();
         $bankAccounts = array_merge($bankAccounts['bank_accounts'], ['type_accounts' => 'unique']);
-        
+
         $phone = preg_replace('/[^0-9]/', '', $subSeller->getTelephone());
         $namePhone = 'phone';
         if (strlen($phone) === 11) {
@@ -177,14 +176,14 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
                 'postal_code'            => preg_replace('/[^0-9]/', '', $businessAddress['address_postcode']),
                 'country'                => $businessAddress['address_country_id'],
             ],
-            'bank_accounts'               => $bankAccounts,
-            'payment_plan'                => $subSeller->getPaymentPlan(),
-            'accepted_contract'           => $subSeller->getAcceptedContract() ? 'S' : 'N',
-            'marketplace_store'           => $subSeller->getMarketplaceStore() ? 'S' : 'N',
-            'occupation'                  => $this->removeAcento($subSeller->getOccupation()),
-            'list_commissions'            => $this->getListCommissionsFormated(),
+            'bank_accounts'                => $bankAccounts,
+            'payment_plan'                 => $subSeller->getPaymentPlan(),
+            'accepted_contract'            => $subSeller->getAcceptedContract() ? 'S' : 'N',
+            'marketplace_store'            => $subSeller->getMarketplaceStore() ? 'S' : 'N',
+            'occupation'                   => $this->removeAcento($subSeller->getOccupation()),
+            'list_commissions'             => $this->getListCommissionsFormated(),
             'state_fiscal_document_number' => 'ISENTO',
-            'federal_registration_status' => 'active',
+            'federal_registration_status'  => 'active',
         ];
 
         if ($subSeller->getIdExt()) {

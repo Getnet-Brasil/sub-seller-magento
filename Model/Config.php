@@ -317,6 +317,7 @@ class Config
         if (is_array($listCommissions)) {
             return $listCommissions;
         }
+
         return $this->json->unserialize($listCommissions);
     }
 }

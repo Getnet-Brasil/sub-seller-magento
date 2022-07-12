@@ -486,8 +486,7 @@ class SubSeller extends \Magento\Framework\Model\AbstractExtensibleModel impleme
                     'address_street_district'   => $address['address_street_district'],
                     'address_street_complement' => isset($complement) ? $complement : null,
                     'address_city'              => $address['address_city'],
-                    'address_region'            =>
-                        isset($address['address_region']) ? $address['address_region'] : null,
+                    'address_region'            => isset($address['address_region']) ? $address['address_region'] : null,
                     'address_region_id'         => $address['address_region_id'],
                     'address_postcode'          => $address['address_postcode'],
                     'address_country_id'        => $address['address_country_id'],
