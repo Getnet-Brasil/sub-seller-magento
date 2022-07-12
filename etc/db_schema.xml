@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Getnet. All rights reserved.
+ *
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="getnet_sub_seller" resource="default" engine="innodb" comment="Getnet Sub Seller">
+        <column xsi:type="int"          name="getnet_sub_seller_id" padding="10" unsigned="true" nullable="true" identity="true" comment="ID"/>
+        <column xsi:type="varchar"      name="merchant_id" comment="Merchant Id" length="50" nullable="false"/>
+        <column xsi:type="varchar"      name="code" comment="Code Internal Seller" length="255" nullable="false"/>
+        <column xsi:type="int"          name="id_ext" comment="Id Seller External" unsigned="true" nullable="true" identity="false"/>
+        <column xsi:type="varchar"      name="email" nullable="true" length="255" comment="Email"/>
+        <column xsi:type="varchar"      name="legal_document_number" comment="Legal Document Number" length="255" nullable="false" />
+        <column xsi:type="int"          name="type" comment="Type" nullable="false" default="0"/>
+        <column xsi:type="varchar"      name="legal_name" comment="Legal Name" length="255" nullable="false" />
+        <column xsi:type="datetime"     name="birth_date" on_update="false" nullable="true" comment="Birth Date"/>
+        <column xsi:type="text"         name="addresses" nullable="false" comment="Addresses"/>
+        <column xsi:type="varchar"      name="telephone" nullable="false" length="255" comment="Phone Number"/>
+        <column xsi:type="text"         name="bank_accounts" nullable="false" comment="Bank Accounts"/>
+        <column xsi:type="int"          name="payment_plan" unsigned="true" nullable="false" identity="false"
+                default="3" comment="Payment Plan"/>
+        <column xsi:type="boolean"      name="accepted_contract" comment="Accepted Contract" nullable="false" default="1" />
+        <column xsi:type="boolean"      name="marketplace_store" comment="Marketplace Store" nullable="false" default="0" />
+        <column xsi:type="varchar"      name="occupation" comment="Occupation" length="255" nullable="false" default="Diversos"/>
+        <column xsi:type="decimal"      name="monthly_gross_income" scale="2" precision="12" unsigned="false"
+                nullable="false"        default="0" comment="Monthly Gross Income"/>
+        <column xsi:type="decimal"      name="gross_equity" scale="2" precision="12" unsigned="false"
+                nullable="false"        default="0" comment="Gross Equity"/>
+        <column xsi:type="text"         name="trade" nullable="true" comment="Trade"/>
+        <column xsi:type="smallint"     name="status" unsigned="true" nullable="false" identity="false"
+                default="1" comment="Status"/>
+        <column xsi:type="varchar"      name="status_comment"  comment="Status Comment" length="255" nullable="true" />
+        <column xsi:type="timestamp"    name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="timestamp"    name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="getnet_sub_seller_id"/>
+        </constraint>
+    </table>
+</schema>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Getnet. All rights reserved.
+ *
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE for license details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/subSeller" method="POST">
+        <service class="Getnet\SubSellerMagento\Api\SubSellerRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Getnet_SubSellerMagento::manage_subseller"/>
+        </resources>
+    </route>
+    <route url="/V1/subSeller/:subSellerId" method="GET">
+        <service class="Getnet\SubSellerMagento\Api\SubSellerRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="Getnet_SubSellerMagento::manage_subseller"/>
+        </resources>
+    </route>
+    <route url="/V1/subSeller" method="PUT">
+        <service class="Getnet\SubSellerMagento\Api\SubSellerRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Getnet_SubSellerMagento::manage_subseller"/>
+        </resources>
+    </route>
+    <route url="/V1/subSeller/:subSellerId" method="DELETE">
+        <service class="Getnet\SubSellerMagento\Api\SubSellerRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="Getnet_SubSellerMagento::manage_subseller"/>
+        </resources>
+    </route>
+    <route url="/V1/subSeller/search" method="GET">
+        <service class="Getnet\SubSellerMagento\Api\SubSellerRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Getnet_SubSellerMagento::manage_subseller"/>
+        </resources>
+    </route>
+</routes>

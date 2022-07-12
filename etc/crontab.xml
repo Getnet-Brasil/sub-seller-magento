@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Getnet. All rights reserved.
+ *
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="getnet_sub_seller">
+        <job name="getnet_administrative_refresh_token" instance="Getnet\SubSellerMagento\Cron\RefreshToken" method="execute">
+            <!-- <schedule>* * * * *</schedule> -->
+            <schedule>*/45 * * * *</schedule>
+        </job>
+        <job name="getnet_sync_create" instance="Getnet\SubSellerMagento\Cron\SynchronizeCreate" method="execute">
+            <schedule>* * * * *</schedule>
+            <!-- <schedule>*/15 * * * *</schedule> -->
+        </job>
+        <job name="getnet_sync_get_update" instance="Getnet\SubSellerMagento\Cron\SynchronizeGetUpdate" method="execute">
+            <schedule>* * * * *</schedule>
+            <!-- <schedule>*/15 * * * *</schedule> -->
+        </job>
+        
+    </group>
+</config>

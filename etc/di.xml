@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Getnet. All rights reserved.
+ *
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Getnet\SubSellerMagento\Api\SubSellerRepositoryInterface"
+                type="Getnet\SubSellerMagento\Model\Seller\SubSellerRepository" />
+    <preference for="Getnet\SubSellerMagento\Api\Data\SubSellerInterface"
+                type="Getnet\SubSellerMagento\Model\Seller\SubSeller" />
+    <preference for="Getnet\SubSellerMagento\Api\Data\SubSellerSearchResultsInterface"
+                type="Getnet\SubSellerMagento\Model\SubSellerSearchResults" />
+    <preference for="Getnet\SubSellerMagento\Api\Data\AddressesInterface"
+                type="Getnet\SubSellerMagento\Model\Seller\Addresses" />
+    <preference for="Getnet\SubSellerMagento\Api\Data\BankAccountsInterface"
+                type="Getnet\SubSellerMagento\Model\Seller\BankAccounts" />
+
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="administrative_token" xsi:type="object">Getnet\SubSellerMagento\Console\Command\Administrative\Token</item>
+                <item name="synchronize_create" xsi:type="object">Getnet\SubSellerMagento\Console\Command\Synchronize\Create</item>
+                <item name="synchronize_update" xsi:type="object">Getnet\SubSellerMagento\Console\Command\Synchronize\Update</item>
+                <item name="synchronize_get_update_data" xsi:type="object">Getnet\SubSellerMagento\Console\Command\Synchronize\GetUpdateData</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Config\Model\Config\TypePool">
+        <arguments>
+            <argument name="sensitive" xsi:type="array">
+                <item name="getnet_sub_seller/general/credentials/client_id_production" xsi:type="string">1</item>
+                <item name="getnet_sub_seller/general/credentials/client_secret_production" xsi:type="string">1</item>
+                <item name="getnet_sub_seller/general/credentials/oauth_production" xsi:type="string">1</item>
+                <item name="getnet_sub_seller/general/credentials/client_id_homolog" xsi:type="string">1</item>
+                <item name="getnet_sub_seller/general/credentials/client_secret_homolog" xsi:type="string">1</item>
+                <item name="getnet_sub_seller/general/credentials/oauth_homolog" xsi:type="string">1</item>
+                <item name="getnet_sub_seller/general/credentials/client_id_sandbox" xsi:type="string">1</item>
+                <item name="getnet_sub_seller/general/credentials/client_secret_sandbox" xsi:type="string">1</item>
+                <item name="getnet_sub_seller/general/credentials/oauth_sandbox" xsi:type="string">1</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Getnet\SubSellerMagento\Model\Seller\SubSellerRepository">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">Getnet\SubSellerMagento\Model\Api\SearchCriteria\SubSellerCollectionProcessor</argument>
+        </arguments>
+    </type>
+    <virtualType name="Getnet\SubSellerMagento\Model\Api\SearchCriteria\SubSellerCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="filters" xsi:type="object">Getnet\SubSellerMagento\Model\Api\SearchCriteria\CollectionProcessor\SubSellerFilterProcessor</item>
+                <item name="sorting" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor</item>
+                <item name="pagination" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Getnet\SubSellerMagento\Model\Api\SearchCriteria\CollectionProcessor\SubSellerFilterProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor">
+        <arguments>
+            <argument name="fieldMapping" xsi:type="array">
+                <item name="sub_seller_id" xsi:type="string">main_table.getnet_sub_seller_id</item>
+                <item name="code" xsi:type="string">main_table.code</item>
+                <item name="merchant_id" xsi:type="string">main_table.merchant_id</item>
+                <item name="id_ext" xsi:type="string">main_table.id_ext</item>
+                <item name="email" xsi:type="string">main_table.email</item>
+                <item name="legal_document_number" xsi:type="string">main_table.legal_document_number</item>          
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Getnet\SubSellerMagento\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Getnet\SubSellerMagento\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">getnetSubSeller</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Getnet\SubSellerMagento\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

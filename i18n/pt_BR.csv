@@ -1,0 +1,119 @@
+"Sub Seller","Sub Seller"
+Status,Status
+"Status Comment","Comentário do Status"
+"Created At","Criado em"
+"Updated At","Atualizado em"
+"Sub Seller Id on Getnet","Sub Seller Id da Getnet"
+Code,Código Interno
+"Type Persona","Tipo de pessoa"
+Email,Email
+"Legal Document Number","Documento Fiscal (CPF/CNPJ)"
+"Legal Name","Nome Legal"
+"Trade Legal Name","Razão social"
+"Founding Date","Founding Date"
+"Birth Date","Data de Nascimento"
+Street,Rua
+"Street Number","Número"
+District,Bairro
+Complement,Complemento
+City,Cidade
+State,Estado
+Country,País
+Postcode,CEP
+Telephone,Telefone
+"Bank Account","Dados bancários"
+"Account Type","Tipo de conta"
+Bank,Numero do Banco
+Agency,Agência
+"Agency Digit","Dígito da Agência"
+Account,Conta
+"Account Digit","Dígito da Conta"
+"Marketplace Settings","Configurações do Marketplace"
+"Payment Plan","Id do plano de pagamento"
+"Accepted Contract","Aceita o Contrato"
+"Marketplace Store","Loja própria do Marketplace"
+Occupation,Ocupação
+"Monthly Gross Income","Faturamento mensal"
+"Gross Equity","Patrimônio bruto"
+Addresses,Endereço
+"Additional data","Informação Adcional"
+"Identification Document","Documento de Identificação"
+Gross,Faturamento
+"Company Addresses","Endereço da Empresa"
+"Legal Data Representative","Representante Legal"
+"Legal Representative Document's","Documento do Representante Legal"
+"Add New Sub Seller","Adicional novo Sub Seller"
+"Pessoa Física","Pessoa Física"
+"Pessoa Jurídica","Pessoa Jurídica"
+Back,Voltar
+Reset,Reiniciar
+"Delete Sub Seller","Apagar o Sub Seller"
+"Are you sure you want to do this?","Você tem certeza?"
+"Save Sub Seller","Salvar o Sub Seller"
+Brand,Marca
+Product,Produto
+"Commission Percentage","Percentual de Comissão"
+Add,Add
+Getnet,Getnet
+SubSeller,SubSeller
+"Manage Sub Seller","Gerenciar Sub Seller"
+"New Sub Seller","Novo Sub Seller"
+"You deleted the sub seller.","Você deletou o sub seller."
+"We can't delete this  sub seller because of an incorrect sub seller ID.","Não podemos excluir este sub seller devido a um ID de sub seller incorreto."
+"Something went wrong deleting this  sub seller.","Não foi possível deletar o sub seller."
+"Edit Sub Seller","Editar Sub Seller"
+"Manage Sub Sellers","Gerenciar Sub Sellers"
+"Getnet Sub Sellers","Getnet Sub Sellers"
+"Sub Seller Code: %1","Sub Seller Código: %1"
+"Sub Sellers","Sub Sellers"
+"You saved the sub seller.","Você salvou o sub seller."
+Checking,Corrente
+Saving,Poupança
+Unique,Única
+Production,Produção
+Homolog,Homologação
+"Sandbox - Environment for tests","Sandbox - Ambientes para testes"
+Pending,Pendente
+"Registered, Pending Authorization","Registrado, aguardando autorização"
+"Authorized Sub Seller","Autorizado para vendas"
+"Not Authorized","Não Autorizado"
+"Requires Registration Update","Requer atualização do cadastro"
+Finished,Concluído
+"Token Refresh Successfully.","Token Regenerado com Sucesso."
+"Error saving information in database: %1","Erro ao salvar no banco de dados: %1"
+"Refresh Token Error: %1","Erro na geração do token: %1"
+"Token update request error: %1","Erro na atualização do token: %1"
+"O Sub Seller já possuí id de relacionamento na Getnet","O Sub Seller já possuí id de relacionamento na Getnet"
+"Send Sub Seller internal code: %1","Enviando Sub Seller de código: %1"
+"Unable to register, errors found: %1","Não foi possível realizar o cadastro, erros encontrados: %1"
+"Success, the sub seller id: %1, enable to sales: %2, id getnet: %3","Sucesso, o sub seller id: %1, está habilitado para vendas: %2, id getnet: %3"
+"Connection Error: %1","Erro de Conexão: %1"
+"The Sub Seller does not have a relationship id on Getnet.","O Sub Seller não tem id de relacionamento na Getnet."
+"Get Data to Sub Seller internal code: %1","Obtendo atualização do sub seller: %1"
+"Success, sub seller id: %1, enable to sale: %2","Sucesso, sub seller id: %1, habilitado para vendas: %2"
+"Error: %1","Erro: %1"
+Error,Erro
+"The Sub Seller does not have a relationship id on Getnet","O Sub Seller não tem id de relacionamento na Getnet"
+"Could not update registration, errors found: %1","Não foi possível atualizar o cadastro, erros encontrados: %1"
+"""%fieldName"" is required. Enter and try again.","""%fieldName"" é obrigatório. Insira e tente novamente."
+"Getnet Sub Seller","Getnet Sub Seller"
+"Sub Seller Section","Sub Seller Sessão"
+Settings,Configuração
+"<div class='getnet-payment-logo'></div><div class='getnet-payment-byline'><p><b>Pagamentos Digitais Getnet</b> - Sub Seller</p><p>Com os Pagamentos Digitais Getnet, você tem acesso a soluções completas para oferecer a melhor experiência de pagamento online. Além disso, você pode contar com uma tecnologia de ponta e segurança em todas as transações.</p></div>","<div class='getnet-payment-logo'></div><div class='getnet-payment-byline'><p><b>Pagamentos Digitais Getnet</b> - Sub Seller</p><p>Com os Pagamentos Digitais Getnet, você tem acesso a soluções completas para oferecer a melhor experiência de pagamento online. Além disso, você pode contar com uma tecnologia de ponta e segurança em todas as transações.</p></div>"
+"Technical support available <a href=""https://github.com/getnet-adquirencia/payment-magento/issues/new/choose"">here</a>.","Technical support available <a href=""https://github.com/getnet-adquirencia/payment-magento/issues/new/choose"">here</a>."
+Credentials,Credentials
+"<h4>Attention, The requested data is exclusive to the Administration API.</h4><p>Consult your sales representative to obtain.</p>","<h4>Atenção, os dados solicitados são exclusivos da API Getnet de Adminstração.</h4><p>Consulte seu Representante de Vendas para obter esses dados.</p>"
+Environment,Ambiente
+"Merchant Id - production","Merchant Id - produção"
+"Client Id - production","Client Id - produção" 
+"Client Secret - production","Client Secret - produção"
+"Merchant Id - homolog","Merchant Id - homologação"
+"Client Id - homolog","Client Id - homologação"
+"Client Secret - homolog","Client Secret - homologação"
+"Merchant Id - Sandbox","Merchant Id - Sandbox"
+"Client Id - Sandbox","Client Id - Sandbox"
+"Client Secret - Sandbox","Client Secret - Sandbox"
+"Sets the list commissions","Defina a lista de comissão"
+Commisions,Comissões
+Id,Id
+"Id Seller on Getnet","Sub Seller Id na Getnet"
