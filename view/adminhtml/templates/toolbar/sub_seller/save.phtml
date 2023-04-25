@@ -11,14 +11,12 @@
 ?>
 <?php if ($form): ?>
     <?= $form->toHtml() ?>
-    <?php $scriptString = <<<script
-    require([
-        "jquery",
-        "mage/mage"
-    ], function($){
-        $('#{$block->escapeJs($form->getForm()->getId())}').mage('form').mage('validation');
-    });
-script;
-    ?>
-    <?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false) ?>
 <?php endif; ?>
+<script>
+require([
+    "jquery",
+    "mage/mage"
+], function($){
+    $('#<?= $block->escapeJs($form->getForm()->getId()) ?>').mage('form').mage('validation');
+});
+</script>
