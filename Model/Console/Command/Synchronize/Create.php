@@ -18,8 +18,8 @@ use Getnet\SubSellerMagento\Model\Config as GetnetConfig;
 use Getnet\SubSellerMagento\Model\Console\Command\AbstractModel;
 use Magento\Framework\App\State;
 use Magento\Framework\Exception\LocalizedException;
-use Magento\Framework\HTTP\ZendClient;
-use Magento\Framework\HTTP\ZendClientFactory;
+use Laminas\Http\ClientFactory;
+use Laminas\Http\Request;
 use Magento\Framework\Serialize\Serializer\Json;
 
 /**
@@ -58,7 +58,7 @@ class Create extends AbstractModel
     protected $json;
 
     /**
-     * @var ZendClientFactory
+     * @var ClientFactory
      */
     protected $httpClientFactory;
 
@@ -69,7 +69,7 @@ class Create extends AbstractModel
      * @param GetnetHelper                 $getnetHelper
      * @param SubSellerRepositoryInterface $subSellerRepository
      * @param Json                         $json
-     * @param ZendClientFactory            $httpClientFactory
+     * @param ClientFactory                $httpClientFactory
      */
     public function __construct(
         State $state,
@@ -78,7 +78,7 @@ class Create extends AbstractModel
         GetnetHelper $getnetHelper,
         SubSellerRepositoryInterface $subSellerRepository,
         Json $json,
-        ZendClientFactory $httpClientFactory
+        ClientFactory $httpClientFactory
     ) {
         $this->state = $state;
         $this->logger = $logger;
@@ -220,20 +220,27 @@ class Create extends AbstractModel
     ): \Magento\Framework\DataObject {
         $uri = $this->getnetConfig->getUri();
         $bearer = $this->getnetConfig->getAuth();
-        $client = $this->httpClientFactory->create();
         $send = $this->json->serialize($sellerFomarted);
+
+        $headers = [
+            'Authorization'               => 'Bearer '.$bearer,
+            'Content-Type'                => 'application/json'
+        ];
+
+        $client = $this->httpClientFactory->create();
         $client->setUri($uri.'v1/mgm/pf/create-presubseller');
         if ($typePersona) {
             $client->setUri($uri.'v1/mgm/pj/create-presubseller');
         }
-        $client->setHeaders('Authorization', 'Bearer '.$bearer);
-        $client->setConfig(['maxredirects' => 0, 'timeout' => 40]);
-        $client->setRawData($send, 'application/json');
-        $client->setMethod(ZendClient::POST);
+        $client->setHeaders($headers);
+        $client->setOptions(['maxredirects' => 0, 'timeout' => 30]);
+        $client->setRawBody($send);
+        $client->setMethod(Request::METHOD_POST);
+
         $getnetData = new \Magento\Framework\DataObject();
 
         try {
-            $result = $client->request()->getBody();
+            $result = $client->send()->getBody();
             $response = $this->json->unserialize($result);
             $this->logger->info(
                 $this->json->serialize([

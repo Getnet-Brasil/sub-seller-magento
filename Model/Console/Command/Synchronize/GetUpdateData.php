@@ -18,8 +18,8 @@ use Getnet\SubSellerMagento\Model\Config as GetnetConfig;
 use Getnet\SubSellerMagento\Model\Console\Command\AbstractModel;
 use Magento\Framework\App\State;
 use Magento\Framework\Exception\LocalizedException;
-use Magento\Framework\HTTP\ZendClient;
-use Magento\Framework\HTTP\ZendClientFactory;
+use Laminas\Http\ClientFactory;
+use Laminas\Http\Request;
 use Magento\Framework\Serialize\Serializer\Json;
 
 /**
@@ -58,7 +58,7 @@ class GetUpdateData extends AbstractModel
     protected $json;
 
     /**
-     * @var ZendClientFactory
+     * @var ClientFactory
      */
     protected $httpClientFactory;
 
@@ -69,7 +69,7 @@ class GetUpdateData extends AbstractModel
      * @param GetnetHelper                 $getnetHelper
      * @param SubSellerRepositoryInterface $subSellerRepository
      * @param Json                         $json
-     * @param ZendClientFactory            $httpClientFactory
+     * @param ClientFactory                $httpClientFactory
      */
     public function __construct(
         State $state,
@@ -78,7 +78,7 @@ class GetUpdateData extends AbstractModel
         GetnetHelper $getnetHelper,
         SubSellerRepositoryInterface $subSellerRepository,
         Json $json,
-        ZendClientFactory $httpClientFactory
+        ClientFactory $httpClientFactory
     ) {
         $this->state = $state;
         $this->logger = $logger;
@@ -181,6 +181,10 @@ class GetUpdateData extends AbstractModel
         $client = $this->httpClientFactory->create();
         $uriBase = $this->getnetConfig->getUri();
         $bearer = $this->getnetConfig->getAuth();
+        $headers = [
+            'Authorization'               => 'Bearer '.$bearer,
+            'Content-Type'                => 'application/json'
+        ];
         $type = 'pf';
 
         if ($typePersona) {
@@ -189,13 +193,16 @@ class GetUpdateData extends AbstractModel
 
         $uri = sprintf('%sv1/mgm/%s/callback/%s/%s', $uriBase, $type, $merchantId, $legalNumber);
 
+        $client = $this->httpClientFactory->create();
         $client->setUri($uri);
-        $client->setHeaders('Authorization', 'Bearer '.$bearer);
-        $client->setMethod(ZendClient::GET);
+        $client->setHeaders($headers);
+        $client->setOptions(['maxredirects' => 0, 'timeout' => 30]);
+        $client->setMethod(Request::METHOD_GET);
+
         $getnetData = new \Magento\Framework\DataObject();
 
         try {
-            $result = $client->request()->getBody();
+            $result = $client->send()->getBody();
             $response = $this->json->unserialize($result);
             $getnetData->setData($response);
 

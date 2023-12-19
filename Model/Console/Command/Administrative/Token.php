@@ -20,8 +20,8 @@ use Magento\Framework\App\Cache\Frontend\Pool;
 use Magento\Framework\App\Cache\TypeListInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\State;
-use Magento\Framework\HTTP\ZendClient;
-use Magento\Framework\HTTP\ZendClientFactory;
+use Laminas\Http\ClientFactory;
+use Laminas\Http\Request;
 use Magento\Framework\Serialize\Serializer\Json;
 
 /**
@@ -70,7 +70,7 @@ class Token extends AbstractModel
     protected $json;
 
     /**
-     * @var ZendClientFactory
+     * @var ClientFactory
      */
     protected $httpClientFactory;
 
@@ -84,7 +84,7 @@ class Token extends AbstractModel
      * @param GetnetHelper         $getnetHelper
      * @param Config               $config
      * @param Json                 $json
-     * @param ZendClientFactory    $httpClientFactory
+     * @param ClientFactory        $httpClientFactory
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
     public function __construct(
@@ -97,7 +97,7 @@ class Token extends AbstractModel
         GetnetHelper $getnetHelper,
         Config $config,
         Json $json,
-        ZendClientFactory $httpClientFactory
+        ClientFactory $httpClientFactory
     ) {
         parent::__construct(
             $logger
@@ -174,25 +174,33 @@ class Token extends AbstractModel
             'scope'      => 'mgm',
             'grant_type' => 'client_credentials',
         ];
+
         $client = $this->httpClientFactory->create();
         $client->setUri($uri.'credenciamento/auth/oauth/v2/token');
         $client->setAuth($clientId, $clientSecret);
-        $client->setConfig(['maxredirects' => 0, 'timeout' => 30]);
+        $client->setOptions(['maxredirects' => 0, 'timeout' => 30]);
         $client->setHeaders(['content' => 'application/x-www-form-urlencoded']);
         $client->setParameterPost($dataSend);
-        $client->setMethod(ZendClient::POST);
+        $client->setMethod(Request::METHOD_POST);
 
         try {
-            $result = $client->request()->getBody();
+            $result = $client->send()->getBody();
             $response = $this->json->unserialize($result);
-            $this->logger->info($this->json->serialize(['response' => $response]));
+            $this->logger->info($this->json->serialize([
+                'uri' => $uri.'credenciamento/auth/oauth/v2/token',
+                'response' => $response
+            ]));
 
             return [
                 'success'    => true,
                 'response'   => $response,
             ];
         } catch (Exception $exc) {
-            $this->logger->debug($this->json->serialize(['error' => $exc->getMessage()]));
+            $this->logger->info($this->json->serialize([
+                'uri' => $uri.'credenciamento/auth/oauth/v2/token',
+                'response' => $client->send()->getBody(),
+                'error' => $exc->getMessage()
+            ]));
 
             return ['success' => false, 'error' =>  $exc->getMessage()];
         }
