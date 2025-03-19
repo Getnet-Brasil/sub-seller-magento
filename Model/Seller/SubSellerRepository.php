@@ -233,7 +233,7 @@ class SubSellerRepository implements SubSellerRepositoryInterface
      *
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      * @SuppressWarnings(PHPMD.NPathComplexity)
-     */
+    */
     private function validate($subSeller)
     {
         $exception = new InputException();
@@ -242,7 +242,8 @@ class SubSellerRepository implements SubSellerRepositoryInterface
             $subSeller->setId(null);
         }
 
-        if (!\Zend_Validate::is($subSeller->getLegalDocumentNumber(), 'NotEmpty')) {
+        $validator = new \Laminas\Validator\NotEmpty();
+        if (!$validator->isValid($subSeller->getLegalDocumentNumber())) {
             $exception->addError(
                 __(
                     '"%fieldName" is required. Enter and try again.',
@@ -252,6 +253,7 @@ class SubSellerRepository implements SubSellerRepositoryInterface
                 )
             );
         }
+        
         if ($subSeller->getLegalDocumentNumber()) {
             $legalDocumentNumber = preg_replace('/[^0-9]/', '', $subSeller->getLegalDocumentNumber());
 
