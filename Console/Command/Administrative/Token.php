@@ -62,6 +62,8 @@ class Token extends Command
 
         $storeId = $input->getArgument(self::STORE_ID);
         $this->token->newToken($storeId);
+
+        return 1;
     }
 
     /**

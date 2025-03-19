@@ -253,7 +253,7 @@ class SubSellerRepository implements SubSellerRepositoryInterface
                 )
             );
         }
-        
+
         if ($subSeller->getLegalDocumentNumber()) {
             $legalDocumentNumber = preg_replace('/[^0-9]/', '', $subSeller->getLegalDocumentNumber());
 

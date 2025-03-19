@@ -65,6 +65,8 @@ class Create extends Command
 
         $subSellerId = (int) $input->getArgument(self::SUB_SELLER_ID);
         $this->create->create($subSellerId);
+
+        return 1;
     }
 
     /**

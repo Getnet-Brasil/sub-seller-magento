@@ -65,6 +65,8 @@ class Update extends Command
 
         $subSellerId = (int) $input->getArgument(self::SUB_SELLER_ID);
         $this->update->update($subSellerId);
+
+        return 1;
     }
 
     /**

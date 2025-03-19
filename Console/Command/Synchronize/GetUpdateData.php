@@ -65,6 +65,8 @@ class GetUpdateData extends Command
 
         $subSellerId = (int) $input->getArgument(self::SUB_SELLER_ID);
         $this->getUpdateData->getUpdateData($subSellerId);
+
+        return 1;
     }
 
     /**
