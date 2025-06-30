@@ -27,7 +27,7 @@ class Config
     /**
      * Uri Production.
      */
-    public const URI_PRODUCTION = 'https://api.getnet.com.br/';
+    public const URI_PRODUCTION = 'https://api-backoffice.getnet.com.br/';
 
     /**
      * Uri Homolog.
